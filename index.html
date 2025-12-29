@@ -219,7 +219,12 @@ footer{
 
 <body>
 
-<canvas id="particles"></canvas>
+canvas{
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events: none;   /* 🔥 THIS IS THE FIX */
+}
 
 <header>
   <div class="logo">Ayush.</div>
