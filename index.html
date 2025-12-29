@@ -45,6 +45,7 @@ canvas{
   position:fixed;
   inset:0;
   z-index:-1;
+  pointer-events:none; /* 🔥 FIX */
 }
 
 /* HEADER */
@@ -86,10 +87,7 @@ header nav a{
   width:100%;
 }
 
-.hero-text{
-  flex:1;
-}
-
+.hero-text{flex:1;}
 .hero-text span{color:var(--accent);}
 
 .typing{
@@ -111,11 +109,9 @@ header nav a{
   border-radius:50%;
   border:3px solid var(--accent);
   background:var(--glass);
-  backdrop-filter:blur(12px);
   animation:float 4s ease-in-out infinite;
 }
 
-/* Floating image */
 @keyframes float{
   0%{transform:translateY(0)}
   50%{transform:translateY(-15px)}
@@ -138,7 +134,6 @@ header nav a{
 section{padding:80px 10%;text-align:center;}
 h2{font-size:28px;margin-bottom:35px;}
 
-/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
@@ -149,33 +144,21 @@ h2{font-size:28px;margin-bottom:35px;}
 
 .card{
   background:var(--glass);
-  backdrop-filter:blur(18px);
   border:1px solid var(--border);
   border-radius:22px;
   padding:30px;
-  transition:0.3s;
-  transform-style:preserve-3d;
+  transition:.3s;
 }
-
 .card:hover{border-color:var(--accent);}
-
-.card i{
-  font-size:34px;
-  color:var(--accent);
-  margin-bottom:10px;
-}
+.card i{font-size:34px;color:var(--accent);}
 
 /* SOCIALS */
-.social-box:hover{
-  transform:translateY(-12px) scale(1.07);
-}
+.social-box:hover{transform:translateY(-12px) scale(1.07);}
 .social-box.linkedin:hover i{color:#0A66C2;}
-.social-box.github:hover i{color:#fff;}
 .social-box.instagram:hover{
   background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4);
   color:#fff;
 }
-.social-box.instagram:hover i{color:#fff;}
 
 /* CONTACT */
 form{max-width:400px;margin:auto;}
@@ -188,7 +171,6 @@ input,textarea,button{
   background:var(--glass);
   color:var(--text);
 }
-button{cursor:pointer;font-weight:600;}
 button:hover{background:var(--accent);color:#000;}
 
 /* FOOTER */
@@ -196,19 +178,13 @@ footer{
   padding:20px;
   text-align:center;
   background:var(--glass);
-  backdrop-filter:blur(15px);
-  border-top:1px solid var(--border);
 }
 
 /* RESPONSIVE */
 @media(max-width:768px){
-  .hero-content{
-    flex-direction:column-reverse;
-    text-align:center;
-  }
+  .hero-content{flex-direction:column-reverse;text-align:center;}
 }
 
-/* BG ANIMATION */
 @keyframes bgMove{
   0%{background-position:0% 50%}
   50%{background-position:100% 50%}
@@ -219,12 +195,8 @@ footer{
 
 <body>
 
-canvas{
-  position:fixed;
-  inset:0;
-  z-index:-1;
-  pointer-events: none;   /* 🔥 THIS IS THE FIX */
-}
+<!-- 🔥 THIS WAS MISSING -->
+<canvas id="particles"></canvas>
 
 <header>
   <div class="logo">Ayush.</div>
@@ -240,28 +212,14 @@ canvas{
 
 <section class="hero" id="home">
   <div class="hero-content">
-
     <div class="hero-text">
       <h1>Hi, I'm <span>Ayush Sharma</span></h1>
       <div class="typing" id="typing"></div>
       <a href="#projects" class="btn">View Projects</a>
     </div>
-
-    <!-- 🔥 REPLACE IMAGE NAME HERE -->
     <div class="hero-img">
       <img src="45469_page-0001.jpg" alt="Ayush Sharma">
     </div>
-
-  </div>
-</section>
-
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="grid">
-    <div class="card"><i class="fa-brands fa-html5"></i><p>HTML</p></div>
-    <div class="card"><i class="fa-brands fa-css3-alt"></i><p>CSS</p></div>
-    <div class="card"><i class="fa-brands fa-js"></i><p>JavaScript</p></div>
-    <div class="card"><i class="fa-solid fa-code"></i><p>C / C++</p></div>
   </div>
 </section>
 
@@ -269,77 +227,22 @@ canvas{
   <h2>Projects</h2>
   <div class="grid">
     <div class="card">
-  <h3>Palindrome Number Checker</h3>
-  <p>
-    A C project that checks whether a given number is palindrome
-    by reversing the number using loops.
-  </p>
-
-  <a href="https://github.com/ayushhh1106/palindrome-number-c"
-     target="_blank"
-     class="btn">
-    <i class="fa-brands fa-github"></i> View Code
-  </a>
+      <h3>Palindrome Number Checker</h3>
+      <p>C project to check palindrome numbers.</p>
+      <a href="https://github.com/ayushhh1106/palindrome-number-c" target="_blank" class="btn">
+        <i class="fa-brands fa-github"></i> View Code
+      </a>
     </div>
-    <div class="card"><h3>Responsive Website</h3><p>HTML & CSS</p></div>
-    <div class="card"><h3>ATM System</h3><p>Authentication Logic</p></div>
   </div>
 </section>
 
-<section id="socials">
-  <h2>Connect With Me</h2>
-  <div class="grid">
-    <a href="https://github.com/ayushhh1106" target="_blank" class="card social-box github">
-      <i class="fa-brands fa-github"></i><p>GitHub</p>
-    </a>
-    <a href="https://www.linkedin.com/in/ayush-kumar-721182383" target="_blank" class="card social-box linkedin">
-      <i class="fa-brands fa-linkedin"></i><p>LinkedIn</p>
-    </a>
-    <a href="https://www.instagram.com/18xyzzzz" target="_blank" class="card social-box instagram">
-      <i class="fa-brands fa-instagram"></i><p>Instagram</p>
-    </a>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact Me</h2>
-  <form>
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea placeholder="Your Message"></textarea>
-    <button>Send Message</button>
-  </form>
-</section>
-
-<footer>
-  © 2025 Ayush Sharma
-</footer>
+<footer>© 2025 Ayush Sharma</footer>
 
 <script>
-/* DARK LIGHT */
-const mode=document.getElementById("mode");
-mode.onclick=()=>{
-  document.body.classList.toggle("light");
-  mode.classList.toggle("fa-moon");
-  mode.classList.toggle("fa-sun");
-};
-
-/* TYPING */
-const text=["B.Tech CSE Student","Aspiring Software Engineer","Web Developer"];
-let i=0,j=0,del=false;
-(function type(){
-  const el=document.getElementById("typing");
-  if(!del && j<=text[i].length) el.innerHTML=text[i].slice(0,j++);
-  else if(del && j>=0) el.innerHTML=text[i].slice(0,j--);
-  if(j===text[i].length+1) del=true;
-  if(del && j===0){del=false;i=(i+1)%text.length;}
-  setTimeout(type,100);
-})();
-
 /* PARTICLES */
 const c=document.getElementById("particles"),ctx=c.getContext("2d");
 c.width=innerWidth;c.height=innerHeight;
-let p=[...Array(160)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:Math.random()-0.5,vy:Math.random()-0.5}));
+let p=[...Array(120)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:Math.random()-0.5,vy:Math.random()-0.5}));
 (function draw(){
   ctx.clearRect(0,0,c.width,c.height);
   p.forEach(a=>{
@@ -351,16 +254,6 @@ let p=[...Array(160)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height
   });
   requestAnimationFrame(draw);
 })();
-
-/* 3D HOVER */
-document.querySelectorAll(".card").forEach(card=>{
-  card.addEventListener("mousemove",e=>{
-    const r=card.getBoundingClientRect();
-    const x=e.clientX-r.left,y=e.clientY-r.top;
-    card.style.transform=`rotateX(${-(y-r.height/2)/15}deg) rotateY(${(x-r.width/2)/15}deg)`;
-  });
-  card.addEventListener("mouseleave",()=>card.style.transform="rotateX(0) rotateY(0)");
-});
 </script>
 
 </body>
