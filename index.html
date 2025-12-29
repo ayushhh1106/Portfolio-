@@ -3,12 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ayush Sharma | Portfolio</title>
+<title>Ayush kumar | Portfolio</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 <style>
@@ -40,14 +37,12 @@ body{
   overflow-x:hidden;
 }
 
-/* PARTICLES */
 canvas{
   position:fixed;
   inset:0;
   z-index:-1;
 }
 
-/* HEADER */
 header{
   display:flex;
   justify-content:space-between;
@@ -68,7 +63,6 @@ header nav a{
 }
 .toggle{cursor:pointer;color:var(--accent);margin-left:15px;}
 
-/* HERO */
 .hero{
   min-height:90vh;
   display:flex;
@@ -91,7 +85,6 @@ header nav a{
 }
 
 .hero-text span{color:var(--accent);}
-
 .typing{
   margin-top:10px;
   font-size:18px;
@@ -115,7 +108,6 @@ header nav a{
   animation:float 4s ease-in-out infinite;
 }
 
-/* Floating image */
 @keyframes float{
   0%{transform:translateY(0)}
   50%{transform:translateY(-15px)}
@@ -134,11 +126,9 @@ header nav a{
 }
 .btn:hover{background:var(--accent);color:#000;}
 
-/* SECTIONS */
 section{padding:80px 10%;text-align:center;}
 h2{font-size:28px;margin-bottom:35px;}
 
-/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
@@ -146,7 +136,8 @@ h2{font-size:28px;margin-bottom:35px;}
   max-width:900px;
   margin:auto;
 }
-/* About Section */ .about-container{ max-width:800px; margin:auto; background:var(--glass); backdrop-filter:blur(18px); border:1px solid var(--border); border-radius:22px; padding:35px; line-height:1.8; font-size:16px; } .about-container strong{color:var(--accent);}
+.about-container{ max-width:800px; margin:auto; background:var(--glass); backdrop-filter:blur(18px); border:1px solid var(--border); border-radius:22px; padding:35px; line-height:1.8; font-size:16px; } 
+.about-container strong{color:var(--accent);}
 .card{
   background:var(--glass);
   backdrop-filter:blur(18px);
@@ -158,14 +149,12 @@ h2{font-size:28px;margin-bottom:35px;}
 }
 
 .card:hover{border-color:var(--accent);}
-
 .card i{
   font-size:34px;
   color:var(--accent);
   margin-bottom:10px;
 }
 
-/* SOCIALS */
 .social-box:hover{
   transform:translateY(-12px) scale(1.07);
 }
@@ -177,7 +166,6 @@ h2{font-size:28px;margin-bottom:35px;}
 }
 .social-box.instagram:hover i{color:#fff;}
 
-/* CONTACT */
 form{max-width:400px;margin:auto;}
 input,textarea,button{
   width:100%;
@@ -191,7 +179,6 @@ input,textarea,button{
 button{cursor:pointer;font-weight:600;}
 button:hover{background:var(--accent);color:#000;}
 
-/* FOOTER */
 footer{
   padding:20px;
   text-align:center;
@@ -200,7 +187,6 @@ footer{
   border-top:1px solid var(--border);
 }
 
-/* RESPONSIVE */
 @media(max-width:768px){
   .hero-content{
     flex-direction:column-reverse;
@@ -208,7 +194,6 @@ footer{
   }
 }
 
-/* BG ANIMATION */
 @keyframes bgMove{
   0%{background-position:0% 50%}
   50%{background-position:100% 50%}
@@ -242,14 +227,20 @@ footer{
       <a href="#projects" class="btn">View Projects</a>
     </div>
 
-    <!-- 🔥 REPLACE IMAGE NAME HERE -->
     <div class="hero-img">
       <img src="WhatsApp Image 2025-12-16 at 22.15.19.jpeg" alt="Ayush Sharma">
     </div>
 
   </div>
 </section>
-  <!-- About Section --> <section id="about"> <h2>About Me</h2> <div class="about-container"> <p>Hello! I'm <strong>Ayush Kumar</strong>, a B.Tech CSE 1st year student with a strong interest in software development and web technologies. I enjoy building responsive websites and working with C, C++, HTML, CSS, and JavaScript.</p> <p>I'm constantly learning new technologies and improving my problem-solving skills through hands-on projects and practical implementation. My goal is to become a skilled full-stack developer.</p> </div> </section>
+
+<section id="about"> 
+<h2>About Me</h2> 
+<div class="about-container"> 
+<p>Hello! I'm <strong>Ayush Kumar</strong>, a B.Tech CSE 1st year student with a strong interest in software development and web technologies. I enjoy building responsive websites and working with C, C++, HTML, CSS, and JavaScript.</p> 
+<p>I'm constantly learning new technologies and improving my problem-solving skills through hands-on projects and practical implementation. My goal is to become a skilled full-stack developer.</p> 
+</div> 
+</section>
 
 <section id="skills">
   <h2>Skills</h2>
@@ -264,9 +255,23 @@ footer{
 <section id="projects">
   <h2>Projects</h2>
   <div class="grid">
-    <div class="card"><h3>Palindrome Checker</h3><p>C Program</p></div>
-    <div class="card"><h3>Responsive Website</h3><p>HTML & CSS</p></div>
-    <div class="card"><h3>ATM System</h3><p>Authentication Logic</p></div>
+    <div class="card">
+      <h3>Palindrome Checker</h3>
+      <p>C Program</p>
+      <a href="https://github.com/ayushhh1106/palindrome-in-c" target="_blank" class="project-link">
+        <i class="fa-brands fa-github"></i> 
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>Web tech practical git hub</h3>
+      <p>HTML & CSS & JAVA SCRIPT</p>
+      <a href="https://github.com/ayushhh1106/responsive-website-html-css" target="_blank" class="project-link">
+        <i class="fa-brands fa-github"></i> 
+      </a>
+      <br>
+      <a href="https://ayushhh1106.github.io/responsive-website-html-css/" target="_blank" class="project-link live"></a>
+    </div>
   </div>
 </section>
 
@@ -300,7 +305,6 @@ footer{
 </footer>
 
 <script>
-/* DARK LIGHT */
 const mode=document.getElementById("mode");
 mode.onclick=()=>{
   document.body.classList.toggle("light");
@@ -308,22 +312,16 @@ mode.onclick=()=>{
   mode.classList.toggle("fa-sun");
 };
 
-/* TYPING */
 const text = "B.Tech CSE 1st Year | Aspiring Software Engineer & Full-Stack Developer | Learning C, C++, HTML, CSS, JavaScript";
 let i = 0;
-
 (function type() {
     const el = document.getElementById("typing");
-
     if (i <= text.length) {
         el.innerHTML = text.slice(0, i++);
         setTimeout(type, 100);
     }
-    // yahin ruk jaayega, koi loop nahi
 })();
 
-
-/* PARTICLES */
 const c=document.getElementById("particles"),ctx=c.getContext("2d");
 c.width=innerWidth;c.height=innerHeight;
 let p=[...Array(160)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:Math.random()-0.5,vy:Math.random()-0.5}));
@@ -339,7 +337,6 @@ let p=[...Array(160)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height
   requestAnimationFrame(draw);
 })();
 
-/* 3D HOVER */
 document.querySelectorAll(".card").forEach(card=>{
   card.addEventListener("mousemove",e=>{
     const r=card.getBoundingClientRect();
