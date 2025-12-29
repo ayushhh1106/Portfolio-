@@ -1,238 +1,335 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ayush Sharma | Portfolio</title>
-
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<style>
-:root{
-  --accent:#38bdf8;
-  --text:#ffffff;
-  --glass:rgba(255,255,255,0.08);
-  --border:rgba(255,255,255,0.18);
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Ayush Sharma | Portfolio</title>  <!-- Google Font -->  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">  <!-- Icons -->  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">  <style>  
+:root{  
+  --accent:#38bdf8;  
+  --text:#ffffff;  
+  --glass:rgba(255,255,255,0.08);  
+  --border:rgba(255,255,255,0.18);  
+}  
+body.light{  
+  --text:#020617;  
+  --glass:rgba(255,255,255,0.6);  
+  --border:rgba(0,0,0,0.15);  
+}  
+  
+*{  
+  margin:0;  
+  padding:0;  
+  box-sizing:border-box;  
+  font-family:'Poppins',sans-serif;  
+}  
+  
+body{  
+  min-height:100vh;  
+  background:linear-gradient(120deg,#020617,#0f172a,#020617);  
+  background-size:400% 400%;  
+  animation:bgMove 12s ease infinite;  
+  color:var(--text);  
+  overflow-x:hidden;  
+}  
+  
+/* PARTICLES */  
+canvas{  
+  position:fixed;  
+  inset:0;  
+  z-index:-1;  
+}  
+  
+/* HEADER */  
+header{  
+  display:flex;  
+  justify-content:space-between;  
+  align-items:center;  
+  padding:18px 10%;  
+  backdrop-filter:blur(15px);  
+  background:var(--glass);  
+  border-bottom:1px solid var(--border);  
+  position:sticky;  
+  top:0;  
+  z-index:10;  
+}  
+.logo{color:var(--accent);font-size:22px;font-weight:600;}  
+header nav a{  
+  color:var(--text);  
+  margin-left:20px;  
+  text-decoration:none;  
+}  
+.toggle{cursor:pointer;color:var(--accent);margin-left:15px;}  
+  
+/* HERO */  
+.hero{  
+  min-height:90vh;  
+  display:flex;  
+  align-items:center;  
+  justify-content:center;  
+  padding:0 10%;  
+}  
+  
+.hero-content{  
+  display:flex;  
+  align-items:center;  
+  justify-content:space-between;  
+  gap:60px;  
+  flex-wrap:wrap;  
+  width:100%;  
+}  
+  
+.hero-text{  
+  flex:1;  
+}  
+  
+.hero-text span{color:var(--accent);}  
+  
+.typing{  
+  margin-top:10px;  
+  font-size:18px;  
+  opacity:.9;  
+}  
+  
+.hero-img{  
+  flex:1;  
+  display:flex;  
+  justify-content:center;  
+}  
+  
+.hero-img img{  
+  width:260px;  
+  height:260px;  
+  object-fit:cover;  
+  border-radius:50%;  
+  border:3px solid var(--accent);  
+  background:var(--glass);  
+  backdrop-filter:blur(12px);  
+  animation:float 4s ease-in-out infinite;  
+}  
+  
+/* Floating image */  
+@keyframes float{  
+  0%{transform:translateY(0)}  
+  50%{transform:translateY(-15px)}  
+  100%{transform:translateY(0)}  
+}  
+  
+.btn{  
+  margin-top:25px;  
+  padding:12px 30px;  
+  border-radius:30px;  
+  background:var(--glass);  
+  border:1px solid var(--border);  
+  color:var(--text);  
+  text-decoration:none;  
+  display:inline-block;  
+}  
+.btn:hover{background:var(--accent);color:#000;}  
+  
+/* SECTIONS */  
+section{padding:80px 10%;text-align:center;}  
+h2{font-size:28px;margin-bottom:35px;}  
+  
+/* GRID */  
+.grid{  
+  display:grid;  
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));  
+  gap:30px;  
+  max-width:900px;  
+  margin:auto;  
+}  
+  
+.card{  
+  background:var(--glass);  
+  backdrop-filter:blur(18px);  
+  border:1px solid var(--border);  
+  border-radius:22px;  
+  padding:30px;  
+  transition:0.3s;  
+  transform-style:preserve-3d;  
+}  
+  
+.card:hover{border-color:var(--accent);}  
+  
+.card i{  
+  font-size:34px;  
+  color:var(--accent);  
+  margin-bottom:10px;  
+}  
+  
+/* SOCIALS */  
+.social-box:hover{  
+  transform:translateY(-12px) scale(1.07);  
+}  
+.social-box.linkedin:hover i{color:#0A66C2;}  
+.social-box.github:hover i{color:#fff;}  
+.social-box.instagram:hover{  
+  background:linear-gradient(135deg,#f58529,#dd2a7b,#8134af,#515bd4);  
+  color:#fff;  
+}  
+.social-box.instagram:hover i{color:#fff;}  
+  
+/* CONTACT */  
+form{max-width:400px;margin:auto;}  
+input,textarea,button{  
+  width:100%;  
+  padding:12px;  
+  margin:12px 0;  
+  border-radius:10px;  
+  border:1px solid var(--border);  
+  background:var(--glass);  
+  color:var(--text);  
+}  
+button{cursor:pointer;font-weight:600;}  
+button:hover{background:var(--accent);color:#000;}  
+  
+/* FOOTER */  
+footer{  
+  padding:20px;  
+  text-align:center;  
+  background:var(--glass);  
+  backdrop-filter:blur(15px);  
+  border-top:1px solid var(--border);  
+}  
+  
+/* RESPONSIVE */  
+@media(max-width:768px){  
+  .hero-content{  
+    flex-direction:column-reverse;  
+    text-align:center;  
+  }  
+}  
+  
+/* BG ANIMATION */  
+@keyframes bgMove{  
+  0%{background-position:0% 50%}  
+  50%{background-position:100% 50%}  
+  100%{background-position:0% 50%}  
+}  
+</style>  </head>  <body>  canvas{
+position:fixed;
+inset:0;
+z-index:-1;
+pointer-events: none;   /* 🔥 THIS IS THE FIX */
 }
-body.light{
-  --text:#020617;
-  --glass:rgba(255,255,255,0.6);
-  --border:rgba(0,0,0,0.15);
-}
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
+<header>  
+  <div class="logo">Ayush.</div>  
+  <nav>  
+    <a href="#home">Home</a>  
+    <a href="#skills">Skills</a>  
+    <a href="#projects">Projects</a>  
+    <a href="#socials">Socials</a>  
+    <a href="#contact">Contact</a>  
+    <i class="fa-solid fa-moon toggle" id="mode"></i>  
+  </nav>  
+</header>  <section class="hero" id="home">  
+  <div class="hero-content">  <div class="hero-text">  
+  <h1>Hi, I'm <span>Ayush Sharma</span></h1>  
+  <div class="typing" id="typing"></div>  
+  <a href="#projects" class="btn">View Projects</a>  
+</div>  
 
-body{
-  min-height:100vh;
-  background:linear-gradient(120deg,#020617,#0f172a,#020617);
-  background-size:400% 400%;
-  animation:bgMove 12s ease infinite;
-  color:var(--text);
-  overflow-x:hidden;
-}
+<!-- 🔥 REPLACE IMAGE NAME HERE -->  
+<div class="hero-img">  
+  <img src="45469_page-0001.jpg" alt="Ayush Sharma">  
+</div>
 
-/* PARTICLES */
-canvas{
-  position:fixed;
-  inset:0;
-  z-index:-1;
-  pointer-events:none;
-}
+  </div>  
+</section>  <section id="skills">  
+  <h2>Skills</h2>  
+  <div class="grid">  
+    <div class="card"><i class="fa-brands fa-html5"></i><p>HTML</p></div>  
+    <div class="card"><i class="fa-brands fa-css3-alt"></i><p>CSS</p></div>  
+    <div class="card"><i class="fa-brands fa-js"></i><p>JavaScript</p></div>  
+    <div class="card"><i class="fa-solid fa-code"></i><p>C / C++</p></div>  
+  </div>  
+</section>  <section id="projects">  
+  <h2>Projects</h2>  
+  <div class="grid">  
+    <div class="card">  
+  <h3>Palindrome Number Checker</h3>  
+  <p>  
+    A C project that checks whether a given number is palindrome  
+    by reversing the number using loops.  
+  </p>  <a href="https://github.com/ayushhh1106/palindrome-number-c"  
+target="_blank"  
+class="btn">
+<i class="fa-brands fa-github"></i> View Code
+</a>
+</div>
+<div class="card"><h3>Responsive Website</h3><p>HTML & CSS</p></div>
+<div class="card"><h3>ATM System</h3><p>Authentication Logic</p></div>
 
-/* HEADER */
-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 10%;
-  backdrop-filter:blur(15px);
-  background:var(--glass);
-  border-bottom:1px solid var(--border);
-  position:sticky;
-  top:0;
-  z-index:10;
-}
-.logo{color:var(--accent);font-size:22px;font-weight:600;}
-header nav a{
-  color:var(--text);
-  margin-left:20px;
-  text-decoration:none;
-}
-
-/* HERO */
-.hero{
-  min-height:90vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:0 10%;
-}
-.hero-content{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:60px;
-  flex-wrap:wrap;
-  width:100%;
-}
-.hero-text span{color:var(--accent);}
-.typing{margin-top:10px;font-size:18px;opacity:.9;}
-
-.hero-img img{
-  width:260px;
-  height:260px;
-  object-fit:cover;
-  border-radius:50%;
-  border:3px solid var(--accent);
-  animation:float 4s ease-in-out infinite;
-}
-
-@keyframes float{
-  0%{transform:translateY(0)}
-  50%{transform:translateY(-15px)}
-  100%{transform:translateY(0)}
-}
-
-.btn{
-  margin-top:25px;
-  padding:12px 30px;
-  border-radius:30px;
-  background:var(--glass);
-  border:1px solid var(--border);
-  color:var(--text);
-  text-decoration:none;
-  display:inline-block;
-}
-.btn:hover{background:var(--accent);color:#000;}
-
-section{padding:80px 10%;text-align:center;}
-h2{font-size:28px;margin-bottom:35px;}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:30px;
-  max-width:900px;
-  margin:auto;
-}
-
-.card{
-  background:var(--glass);
-  border:1px solid var(--border);
-  border-radius:22px;
-  padding:30px;
-}
-.card:hover{border-color:var(--accent);}
-.card i{font-size:34px;color:var(--accent);}
-
-footer{
-  padding:20px;
-  text-align:center;
-  background:var(--glass);
-}
-
-@media(max-width:768px){
-  .hero-content{flex-direction:column-reverse;text-align:center;}
-}
-
-@keyframes bgMove{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
-}
-</style>
-</head>
-
-<body>
-
-<!-- ✅ PARTICLES CANVAS -->
-<canvas id="particles"></canvas>
-
-<header>
-  <div class="logo">Ayush.</div>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
-
-<section class="hero" id="home">
-  <div class="hero-content">
-    <div class="hero-text">
-      <h1>Hi, I'm <span>Ayush Sharma</span></h1>
-      <div class="typing" id="typing"></div>
-      <a href="#projects" class="btn">View Projects</a>
-    </div>
-    <div class="hero-img">
-      <!-- 🔥 IMAGE NAME SAME AS REPO -->
-      <img src="45469_page-0001.jpg" alt="Ayush Sharma">
-    </div>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Palindrome Number Checker</h3>
-      <p>C program to check palindrome numbers.</p>
-      <a href="https://github.com/ayushhh1106/palindrome-number-c"
-         target="_blank" class="btn">
-         <i class="fa-brands fa-github"></i> View Code
-      </a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2025 Ayush Sharma
-</footer>
-
-<script>
-/* TYPING EFFECT */
-const text=["B.Tech CSE Student","Aspiring Software Engineer","Web Developer"];
-let i=0,j=0,del=false;
-(function type(){
-  const el=document.getElementById("typing");
-  if(!del && j<=text[i].length) el.innerHTML=text[i].slice(0,j++);
-  else if(del && j>=0) el.innerHTML=text[i].slice(0,j--);
-  if(j===text[i].length+1) del=true;
-  if(del && j===0){del=false;i=(i+1)%text.length;}
-  setTimeout(type,100);
-})();
-
-/* PARTICLES */
-const c=document.getElementById("particles"),ctx=c.getContext("2d");
-c.width=innerWidth;c.height=innerHeight;
-let p=[...Array(120)].map(()=>({
-  x:Math.random()*c.width,
-  y:Math.random()*c.height,
-  vx:Math.random()-0.5,
-  vy:Math.random()-0.5
-}));
-(function draw(){
-  ctx.clearRect(0,0,c.width,c.height);
-  p.forEach(a=>{
-    a.x+=a.vx;a.y+=a.vy;
-    if(a.x<0||a.x>c.width) a.vx*=-1;
-    if(a.y<0||a.y>c.height) a.vy*=-1;
-    ctx.fillStyle="rgba(56,189,248,.6)";
-    ctx.fillRect(a.x,a.y,2,2);
-  });
-  requestAnimationFrame(draw);
-})();
-</script>
-
-</body>
-</html>
+  </div>  
+</section>  <section id="socials">  
+  <h2>Connect With Me</h2>  
+  <div class="grid">  
+    <a href="https://github.com/ayushhh1106" target="_blank" class="card social-box github">  
+      <i class="fa-brands fa-github"></i><p>GitHub</p>  
+    </a>  
+    <a href="https://www.linkedin.com/in/ayush-kumar-721182383" target="_blank" class="card social-box linkedin">  
+      <i class="fa-brands fa-linkedin"></i><p>LinkedIn</p>  
+    </a>  
+    <a href="https://www.instagram.com/18xyzzzz" target="_blank" class="card social-box instagram">  
+      <i class="fa-brands fa-instagram"></i><p>Instagram</p>  
+    </a>  
+  </div>  
+</section>  <section id="contact">  
+  <h2>Contact Me</h2>  
+  <form>  
+    <input type="text" placeholder="Your Name" required>  
+    <input type="email" placeholder="Your Email" required>  
+    <textarea placeholder="Your Message"></textarea>  
+    <button>Send Message</button>  
+  </form>  
+</section>  <footer>  
+  © 2025 Ayush Sharma  
+</footer>  <script>  
+/* DARK LIGHT */  
+const mode=document.getElementById("mode");  
+mode.onclick=()=>{  
+  document.body.classList.toggle("light");  
+  mode.classList.toggle("fa-moon");  
+  mode.classList.toggle("fa-sun");  
+};  
+  
+/* TYPING */  
+const text=["B.Tech CSE Student","Aspiring Software Engineer","Web Developer"];  
+let i=0,j=0,del=false;  
+(function type(){  
+  const el=document.getElementById("typing");  
+  if(!del && j<=text[i].length) el.innerHTML=text[i].slice(0,j++);  
+  else if(del && j>=0) el.innerHTML=text[i].slice(0,j--);  
+  if(j===text[i].length+1) del=true;  
+  if(del && j===0){del=false;i=(i+1)%text.length;}  
+  setTimeout(type,100);  
+})();  
+  
+/* PARTICLES */  
+const c=document.getElementById("particles"),ctx=c.getContext("2d");  
+c.width=innerWidth;c.height=innerHeight;  
+let p=[...Array(160)].map(()=>({x:Math.random()*c.width,y:Math.random()*c.height,vx:Math.random()-0.5,vy:Math.random()-0.5}));  
+(function draw(){  
+  ctx.clearRect(0,0,c.width,c.height);  
+  p.forEach(a=>{  
+    a.x+=a.vx;a.y+=a.vy;  
+    if(a.x<0||a.x>c.width) a.vx*=-1;  
+    if(a.y<0||a.y>c.height) a.vy*=-1;  
+    ctx.fillStyle="rgba(56,189,248,.6)";  
+    ctx.fillRect(a.x,a.y,2,2);  
+  });  
+  requestAnimationFrame(draw);  
+})();  
+  
+/* 3D HOVER */  
+document.querySelectorAll(".card").forEach(card=>{  
+  card.addEventListener("mousemove",e=>{  
+    const r=card.getBoundingClientRect();  
+    const x=e.clientX-r.left,y=e.clientY-r.top;  
+    card.style.transform=`rotateX(${-(y-r.height/2)/15}deg) rotateY(${(x-r.width/2)/15}deg)`;  
+  });  
+  card.addEventListener("mouseleave",()=>card.style.transform="rotateX(0) rotateY(0)");  
+});  
+</script>  </body>  
+</html>  
+Le krke de
